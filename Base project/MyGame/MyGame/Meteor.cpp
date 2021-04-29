@@ -41,12 +41,15 @@ void Meteor::handleCollision(GameObject& otherGameObject)
 	{
 		otherGameObject.makeDead();
 	}
+	sf::Vector2f pos = sprite_.getPosition();
 	makeDead();
-	playAnimation();
+	GameScene& scene = (GameScene&)GAME.getCurrentScene();
+	scene.increaseScore();
+	playAnimation(pos);
 }
 
-void Meteor::playAnimation()
+void Meteor::playAnimation(sf::Vector2f pos)
 {
-	ExplosionPtr explosion = std::make_shared<Explosion>(sf::Vector2f(100.0, 100.0));
+	ExplosionPtr explosion = std::make_shared<Explosion>(pos);
 	GAME.getCurrentScene().addGameObject(explosion);
 }

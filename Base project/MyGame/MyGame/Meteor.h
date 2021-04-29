@@ -13,7 +13,7 @@ public:
 	void update(sf::Time& elapsed);
 	sf::FloatRect getCollisionRect();
 	void handleCollision(GameObject& otherGameObject);
-	void playAnimation();
+	void playAnimation(sf::Vector2f pos);
 private:
 	sf::Sprite sprite_;
 };

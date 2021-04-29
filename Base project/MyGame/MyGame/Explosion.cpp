@@ -5,7 +5,11 @@ Explosion::Explosion(sf::Vector2f pos)
 {
 	AnimatedSprite::setTexture(GAME.getTexture("Resources/explosion-spritesheet.png"));
 	SetUpExplosionAnimation();
+	setOriginMode(TopLeft);
 	playAnimation("explosion", AnimationMode::OnceForwards);
+
+	m_boom.setBuffer(GAME.getSoundBuffer("Resources/boom.wav"));
+	m_boom.play();
 }
 
 void Explosion::SetUpExplosionAnimation()
