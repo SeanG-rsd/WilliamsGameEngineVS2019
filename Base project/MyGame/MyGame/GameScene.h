@@ -17,7 +17,7 @@ class GameScene : public Scene {
 
   void decreaseLives();
 
-  void gameOverMessage();
+  void gameOver();
 private:
 	int m_score = 0;
 	int m_lives = 3;

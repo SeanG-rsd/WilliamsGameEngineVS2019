@@ -26,6 +26,15 @@ void Meteor::update(sf::Time& elapsed)
 		scene.decreaseLives();
 
 		makeDead();
+		GameScene& scene = (GameScene&)GAME.getCurrentScene();
+		if (scene.getLives() > 0)
+		{
+			scene.decreaseLives();
+		}
+		if (scene.getLives() == 0)
+		{
+			scene.gameOver();
+		}
 	}
 	else
 	{
