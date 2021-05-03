@@ -8,7 +8,7 @@ GameOverMessage::GameOverMessage(int score)
 	m_text.setFont(GAME.getFont("Resources/Courneuf-Regular.ttf"));
 	m_text.setPosition(sf::Vector2f(50.0f, 50.0f));
 	m_text.setCharacterSize(48);
-	m_text.setColor(sf::Color::Red);
+	m_text.setFillColor(sf::Color::Red);
 
 	std::stringstream stream;
 	stream << "GAME OVER\n\nYOUR SCORE: " << score << "\n\nPRESS ENTER TO CONTINUE";
