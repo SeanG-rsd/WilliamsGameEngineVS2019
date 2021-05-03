@@ -3,6 +3,7 @@
 #include "Ship.h"
 #include "MeteorSpawner.h"
 #include "Score.h"
+#include "GameOverScene.h"
 
 GameScene::GameScene()
 {
@@ -24,4 +25,20 @@ int GameScene::getScore()
 void GameScene::increaseScore()
 {
 	m_score++;
+}
+
+int GameScene::getLives()
+{
+	return m_lives;
+}
+
+void GameScene::decreaseLives()
+{
+	m_lives--;
+}
+
+void GameScene::gameOverMessage()
+{
+	GameOverScenePtr gameOver = std::make_shared<GameOverScene>(m_score);
+	
 }
