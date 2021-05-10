@@ -20,7 +20,7 @@ class GameScene : public Scene {
   void gameOver();
 private:
 	int m_score = 0;
-	int m_lives = 3;
+	int m_lives = 1000;
 };
 
 typedef std::shared_ptr<GameScene> GameScenePtr;

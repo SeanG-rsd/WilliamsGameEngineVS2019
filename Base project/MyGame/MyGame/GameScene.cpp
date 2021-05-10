@@ -6,9 +6,13 @@
 #include "Lives.h"
 #include "GameOverScene.h"
 #include "GameOverMessage.h"
+#include "Background.h"
 
 GameScene::GameScene()
 {
+	BackgroundPtr background = std::make_shared<Background>();
+	addGameObject(background);
+
 	ShipPtr ship = std::make_shared<Ship>();
 	addGameObject(ship);
 
@@ -39,7 +43,7 @@ int GameScene::getLives()
 
 void GameScene::decreaseLives()
 {
-	m_lives--;
+	m_lives = m_lives - 1;
 }
 
 void GameScene::gameOver()
